@@ -1,0 +1,37 @@
+/* Grid de cards */
+.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  max-width: 800px; /* limita o tamanho total do grid */
+  margin: 0 auto;   /* centraliza */
+}
+
+/* Card / imagem */
+.image-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* mantém quadrado */
+  object-fit: cover;    /* preenche sem distorcer */
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s;
+}
